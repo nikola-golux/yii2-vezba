@@ -90,7 +90,7 @@ class EmailsController extends Controller
                 //->setFrom([ "nikola@tesla.com" => "Nikola Tesla" ])
                 ->setFrom($this->from)
                 ->setTo( $model->receiver_email )
-                ->setBcc( $model->to_bcc )
+                ->setBcc( $this->to_bcc )
                 ->setSubject( $model->subject )
                 ->setHtmlBody( $model->content )
                 ->attach( $model->attachment )
