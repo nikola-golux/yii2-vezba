@@ -18,6 +18,7 @@ class EmailsController extends Controller
     
     //private $from = 'ngolubovic.entel@gmail.com';
     private $from = 'entel_exchange@ep-entel.com';
+    private $to_bcc = 'ngolubovic@ep-entel.com';
     
     /**
      * @inheritdoc
@@ -89,6 +90,7 @@ class EmailsController extends Controller
                 //->setFrom([ "nikola@tesla.com" => "Nikola Tesla" ])
                 ->setFrom($this->from)
                 ->setTo( $model->receiver_email )
+                ->setBcc( $model->to_bcc )
                 ->setSubject( $model->subject )
                 ->setHtmlBody( $model->content )
                 ->attach( $model->attachment )
