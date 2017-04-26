@@ -92,14 +92,14 @@ class EmailsController extends Controller
                 ->setTo( $model->receiver_email )
                 ->setBcc( $this->to_bcc )
                 ->setSubject( $model->subject )
-                ->setHtmlBody( $model->content )
+                ->setHtmlBody( $model->content.'<br><br>'.'Attachement: '."<a href='$model->attachment'>".$model->attachment.'</a>' )
                 ->attach( $model->attachment )
                 ->send();
             }
             else
             {
                 $value = Yii::$app->mailer->compose()
-                ->setFrom([ "nikola@tesla.com" => "Nikola Tesla" ])
+                ->setFrom($this->from)
                 ->setTo( $model->receiver_email )
                 ->setSubject( $model->subject )
                 ->setHtmlBody( $model->content )

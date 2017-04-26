@@ -47,6 +47,7 @@ $config = [
             ],
             */
             // Energoprojekt Entel
+            
             'transport' => [
             'class' => 'Swift_SmtpTransport',
             'host' => '195.252.108.10',  
@@ -54,6 +55,7 @@ $config = [
             'password' => '3ScHz8H9',
             'port' => '25', 
             ],
+            
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
